@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABS AI - Image Generator</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #070b14;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 22px;
+  border-bottom: 1px solid #172d4e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #39aaff;
+}
+
+main {
+  max-width: 850px;
+  margin: 55px auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 38px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #91a4bf;
+}
+
+.panel {
+  background: #101a2b;
+  border: 1px solid #203d62;
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 35px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  background: #080f1c;
+  border: 1px solid #284a72;
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  resize: vertical;
+  font-size: 16px;
+}
+
+select {
+  width: 100%;
+  padding: 13px;
+  background: #080f1c;
+  color: white;
+  border: 1px solid #284a72;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg,#087cff,#27c8ff);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .85;
+}
+
+#result {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#result img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+#download {
+  display: none;
+  color: #42baff;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  color: #65758d;
+  padding: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ABS AI ✦</div>
+  <span>IMAGE STUDIO</span>
+</header>
+
+<main>
+  <h1>Create your imagination.</h1>
+  <p class="subtitle">
+    Turn your ideas into amazing images with AI.
+  </p>
+
+  <div class="panel">
+    <label for="prompt">Describe your image</label>
+
+    <textarea id="prompt"
+    placeholder="A futuristic blue Sonic standing in space..."></textarea>
+
+    <label for="size" style="margin-top:20px">
+      Image format
+    </label>
+
+    <select id="size">
+      <option value="1:1">Square (1:1)</option>
+      <option value="16:9">Landscape (16:9)</option>
+      <option value="9:16">Portrait (9:16)</option>
+    </select>
+
+    <button id="generate" onclick="generateImage()">
+      ✨ Generate Image
+    </button>
+
+    <div id="result">
+      <p>Your generated image will appear here.</p>
+    </div>
+
+    <a id="download" download="ABS-AI.png">
+      Download Image
+    </a>
+  </div>
+</main>
+
+<footer>
+  ABS AI © 2026 - Image Generator
+</footer>
+
+<script>
+async function generateImage() {
+  const prompt = document.getElementById("prompt").value.trim();
+  const result = document.getElementById("result");
+  const button = document.getElementById("generate");
+
+  if (!prompt) {
+    alert("Please describe your image!");
+    return;
+  }
+
+  alert("Connect an image generation API to activate this feature.");
+}
+</script>
+
+</body>
+</html>
